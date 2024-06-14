@@ -256,7 +256,7 @@
 
         <section>
             <h2>🚨 Danger Zone 🚨</h2>
-            <button class="do-not-click" onclick="document.getElementById('spinning-photo').style.display = 'block';">Do Not Click</button>
+            <button class="do-not-click" onclick="document.getElementById('spinning-photo').style.display = 'block';">E11 Smeatlings</button>
         </section>
     </main>
 
@@ -266,6 +266,9 @@
     </footer>
 
     <img id="spinning-photo" src="stone_face.jpg" alt="Spinning Stone Face" style="display: block;">
+
+<audio id="jump-scare-sound" src="your-sound-file.mp3" preload="auto"></audio>
+<img id="jump-scare-image" src="scorp.jpg" alt="Jump Scare" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000;">
 
 <script>
     function launchFireworks() {
@@ -380,4 +383,17 @@
     }
 
     launchFireworks();
+
+    function doJumpScare() {
+        const jumpScareImage = document.getElementById('jump-scare-image');
+        const jumpScareSound = document.getElementById('jump-scare-sound');
+        jumpScareImage.style.display = 'block';
+        jumpScareSound.play();
+
+        setTimeout(() => {
+            jumpScareImage.style.display = 'none';
+        }, 3000); // Hide the image after 3 seconds
+    }
+
+    document.querySelector('.do-not-click').addEventListener('click', doJumpScare);
 </script>
