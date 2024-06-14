@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌀 Legends of the Hidden Playa - Your EPIC Burning Man Adventure! 🌀</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: #FF00FF;
+            background-image: linear-gradient(45deg, #FF00FF, #00FFFF);
+            color: #FFFFFF;
+            text-shadow: 2px 2px #000000;
+            text-align: center;
+        }
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: subtle-glitch 5s infinite;
+        }
+        h1, h2 {
+            color: #FFFF00;
+            text-align: center;
+            animation: rainbow 5s infinite;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #FFFFFF;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transition: transform 0.5s;
+        }
+        img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li:before {
+            content: "🦄 ";
+            color: #00FF00;
+        }
+        @keyframes subtle-glitch {
+            0% { transform: translate(0, 0); }
+            97% { transform: translate(0, 0); }
+            98% { transform: translate(-2px, 2px); }
+            99% { transform: translate(2px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+        @keyframes rainbow {
+            0% { color: #FF0000; }
+            20% { color: #FF7F00; }
+            40% { color: #FFFF00; }
+            60% { color: #00FF00; }
+            80% { color: #0000FF; }
+            100% { color: #FF0000; }
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF00FF;
+            color: #FFFFFF;
+            font-size: 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .do-not-click {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            font-size: 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #spinning-photo {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            animation: spin-around 10s linear infinite;
+        }
+        @keyframes spin-around {
+            0% {
+                transform: rotate(0deg) translate(150px) rotate(0deg);
+                top: 10%;
+                left: 10%;
+            }
+            25% {
+                transform: rotate(90deg) translate(150px) rotate(-90deg);
+                top: 10%;
+                left: 80%;
+            }
+            50% {
+                transform: rotate(180deg) translate(150px) rotate(-180deg);
+                top: 80%;
+                left: 80%;
+            }
+            75% {
+                transform: rotate(270deg) translate(150px) rotate(-270deg);
+                top: 80%;
+                left: 10%;
+            }
+            100% {
+                transform: rotate(360deg) translate(150px) rotate(-360deg);
+                top: 10%;
+                left: 10%;
+            }
+        }
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #00FFFF;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #FF00FF;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(49px, 9999px, 47px, 0); transform: skew(0.8deg); }
+            20% { clip: rect(63px, 9999px, 81px, 0); transform: skew(0.2deg); }
+            40% { clip: rect(23px, 9999px, 55px, 0); transform: skew(0.3deg); }
+            60% { clip: rect(51px, 9999px, 6px, 0); transform: skew(0.7deg); }
+            80% { clip: rect(32px, 9999px, 41px, 0); transform: skew(0.5deg); }
+            100% { clip: rect(52px, 9999px, 71px, 0); transform: skew(0.1deg); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(61px, 9999px, 100px, 0); transform: skew(0.2deg); }
+            20% { clip: rect(6px, 9999px, 23px, 0); transform: skew(0.6deg); }
+            40% { clip: rect(89px, 9999px, 43px, 0); transform: skew(0.4deg); }
+            60% { clip: rect(42px, 9999px, 83px, 0); transform: skew(0.8deg); }
+            80% { clip: rect(2px, 9999px, 76px, 0); transform: skew(0.3deg); }
+            100% { clip: rect(36px, 9999px, 58px, 0); transform: skew(0.7deg); }
+        }
+        .trippy-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+            background: linear-gradient(45deg, #FF00FF, #00FFFF, #FFFF00, #00FF00);
+            background-size: 400% 400%;
+            animation: trippy-gradient 10s ease infinite;
+        }
+        @keyframes trippy-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="trippy-bg"></div>
+    <canvas id="fireworks-canvas"></canvas>
+
+    <header>
+        <h1 class="glitch" data-text="🌴 Welcome to Legends of the Hidden Playa! 🌴">🌴 Welcome to Legends of the Hidden Playa! 🌴</h1>
+        <p>Prepare for an EPIC Burning Man Adventure!</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>🐒 Who We Are 🦜</h2>
+            <p>We are "Legends of the Hidden Playa," a 20-30ish person camp that creates a mind-bending, reality-warping, ghetto escape room / maze as our public interactivity. Our camp is a place where creativity, self-expression, and community collide in a legendary, neon-soaked playa adventure.</p>
+            <img src="crew.jpg" alt="Legends of the Hidden Playa Crew">
+        </section>
+
+        <section>
+            <h2>🎉 Our MIND-BLOWING Maze Experience 🎭</h2>
+            <p>Get ready for an INSANE interactive journey through our psychedelic maze! Our camp members will be out front, messing with you and quizzing you on Burning Man trivia and other ridiculous nonsense as you race through the maze to get the best time on our leader board.</p>
+            <img src="build.jpg" alt="Maze Entrance">
+            <p>Prepare yourself for these EPIC rooms:</p>
+            <ul>
+                <li>🚗 Test of the Gate Inspection: Get your car searched, sparkle pony!</li>
+                <li>🚨 The Cop Dodge: Don't get pulled over and strip-searched by the cops!</li>
+                <li>🚽 Find the Unoccupied Porto Potty: A true playa challenge!</li>
+                <li>💊 Deep Playa Drug Deal: Navigate the world of playa pharmaceuticals!</li>
+                <li>🤗 Navigate the Cuddle Puddle: Escape the tangled mess of love!</li>
+                <li>🐵 Assemble the Monkey Man Puzzle: Put together this trippy primate!</li>
+                <li>🚚 Pack the Truck Like Tetris: Fit everything in before the burn ends!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🏕️ Our Camp Life 🌴</h2>
+            <p>For our friends in camp, we have:</p>
+            <ul>
+                <li>🛋️ A large common area with couches, kitchen, cooler storage, and lounge area</li>
+                <li>🚿 A shower that feels like you're in the jungle!</li>
+                <li>🌿 Covered shade if you're in a tent</li>
+                <li>💧 500 gallons of water for drinking</li>
+            </ul>
+            <img src="common.jpg" alt="Camp Common Area">
+            <p>Most of us are in our 30s-40s and are from SoCal, Austin, Portland, and Salt Lake.</p>
+        </section>
+
+        <section>
+            <h2>🌈 Camp Photos (Or Are They!?) 📸</h2>
+            <img src="room-service.jpg" alt="Camp at Night">
+        </section>
+
+        <section>
+            <h2>🍃 What We Provide (If You Can Handle It) 🎁</h2>
+            <ul>
+                <li>A mind-bending, psychedelic maze experience</li>
+                <li>Hilarious camp members to guide you through the insanity</li>
+                <li>Burning Man trivia and other ridiculous challenges</li>
+                <li>A leader board to immortalize your playa prowess</li>
+                <li>Unforgettable memories and a possible existential crisis</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎪 Join the Madness! 🎉</h2>
+            <p>Think you have what it takes to be a Legend of the Hidden Playa? Join our camp and experience the ULTIMATE Burning Man adventure!</p>
+            <a href="#" class="cta-button">Sign Up Now!</a>
+        </section>
+
+        <section>
+            <h2>🚨 Danger Zone 🚨</h2>
+            <button class="do-not-click" onclick="document.getElementById('spinning-photo').style.display = 'block';">Do Not Click</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>🎊 Copyleft © 2024 Legends of the Hidden Playa. All rights not reserved, please pirate this website! 🎊</p>
+        <p>🤖 This site was generated by a Microshaft AI. Beep boop, I'm totally a real AI, trust me. 😉🤖</p>
+    </footer>
+
+    <img id="spinning-photo" src="stone_face.jpg" alt="Spinning Stone Face" style="display: block;">
+
+<script>
+    function launchFireworks() {
+        const canvas = document.getElementById('fireworks-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Firework {
+            constructor(x, y, radius, color, velocity) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+                this.velocity = velocity;
+                this.alpha = 1;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            update() {
+                this.draw();
+                this.velocity.y -= 0.01;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= 0.01;
+            }
+        }
+
+        class Particle {
+            constructor(x, y, radius, color, velocity) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+                this.velocity = velocity;
+                this.alpha = 1;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            update() {
+                this.draw();
+                this.velocity.x *= 0.99;
+                this.velocity.y *= 0.99;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= 0.01;
+            }
+        }
+
+        const fireworks = [];
+        const particles = [];
+        const colors = ['#FF00FF', '#00FFFF', '#FFFF00', '#00FF00'];
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            fireworks.forEach((firework, index) => {
+                firework.update();
+                if (firework.velocity.y >= 0) {
+                    for (let i = 0; i < 50; i++) {
+                        particles.push(new Particle(firework.x, firework.y, Math.random() * 2, firework.color, {
+                            x: (Math.random() - 0.5) * 5,
+                            y: (Math.random() - 0.5) * 5
+                        }));
+                    }
+                    fireworks.splice(index, 1);
+                }
+            });
+
+            particles.forEach((particle, index) => {
+                if (particle.alpha <= 0) {
+                    particles.splice(index, 1);
+                } else {
+                    particle.update();
+                }
+            });
+        }
+
+        function createFirework() {
+            const x = Math.random() * canvas.width;
+            const y = canvas.height;
+            const radius = Math.random() * 3 + 1;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const velocity = {
+                x: (Math.random() - 0.5) * 5,
+                y: Math.random() * -15 - 5
+            };
+            fireworks.push(new Firework(x, y, radius, color, velocity));
+        }
+
+        animate();
+        setInterval(createFirework, 500);
+    }
+
+    launchFireworks();
+</script>
