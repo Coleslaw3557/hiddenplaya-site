@@ -46,6 +46,19 @@
             content: "🦄 ";
             color: #00FF00;
         }
+        .helpercat-text {
+    position: fixed;
+    bottom: 70px; /* Adjust this value to position the text box correctly */
+    right: 10px; /* Adjust this value to position the text box correctly */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
         @keyframes subtle-glitch {
             0% { transform: translate(0, 0); }
             97% { transform: translate(0, 0); }
@@ -332,7 +345,9 @@
     </footer>
 
     <img id="spinning-photo" src="stone_face.jpg" alt="Spinning Stone Face" style="display: block;">
-    <img src="https://www.freebsd.org/images/beastie.png" alt="BSD Daemon" class="bsd-badge">
+    <img src="resized_cat.png" alt="Helpercat" class="bsd-badge">
+    <div class="helpercat-text">Can I help you?</div>
+
 
     <audio id="jump-scare-sound" src="your-sound-file.mp3" preload="auto"></audio>
     <img id="jump-scare-image" src="scorp.jpg" alt="Jump Scare" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000;">
