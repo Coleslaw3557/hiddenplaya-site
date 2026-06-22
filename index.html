@@ -157,19 +157,20 @@
             letter-spacing: 1px;
             padding: 14px 28px;
             margin: 12px 0;
-            color: #1a140d;
-            background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-            border: 2px solid #8a6a1f;
+            color: #fff3e0;
+            background: linear-gradient(180deg, var(--torch), var(--blood));
+            border: 2px solid var(--gold);
             border-radius: 4px;
             text-decoration: none;
             font-size: 20px;
-            box-shadow: 0 4px 0 #6e520f, 0 0 24px rgba(255,138,43,0.4);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 0 #5a1c16, 0 0 24px rgba(255,138,43,0.45);
             animation: torch-bob 2.4s ease-in-out infinite;
         }
         .cta-button:hover { filter: brightness(1.12); transform: translateY(-2px); }
         @keyframes torch-bob {
-            0%, 100% { box-shadow: 0 4px 0 #6e520f, 0 0 18px rgba(255,138,43,0.35); }
-            50% { box-shadow: 0 4px 0 #6e520f, 0 0 34px rgba(255,138,43,0.75); }
+            0%, 100% { box-shadow: 0 4px 0 #5a1c16, 0 0 18px rgba(255,138,43,0.35); }
+            50% { box-shadow: 0 4px 0 #5a1c16, 0 0 34px rgba(255,138,43,0.75); }
         }
 
         .where p.address {
@@ -213,7 +214,7 @@
         <h1>Legends of the Hidden Playa</h1>
         <p class="subtitle">Black Rock City · 2026</p>
         <p>A group of friends, and friends of friends, hanging in the desert and chassing folks through our "temple".</p>
-        <a href="#join-the-madness" class="cta-button">The camp planning form</a>
+        <a href="#join-the-madness" class="cta-button">👉 Fill Out the Camp Form</a>
     </header>
 
     <main>
@@ -237,6 +238,8 @@
             <p>Test your might! Race through the maze dodging cops, rope, and other obstacles, or just explore the rooms!</p>
             <img src="pub.jpg" alt="Maze Entrance">
             <figcaption>The entrance.</figcaption>
+            <img src="maze-1.jpeg" alt="The Maze">
+            <figcaption>The maze.</figcaption>
             <h3>The challenges</h3>
             <ul>
                 <li><strong>Gate Inspection</strong> — Hold onto your butts, and hide your boofing supplies.</li>
@@ -282,6 +285,10 @@
             <figcaption>Older prep day.</figcaption>
             <img src="yurt.jpg" alt="CrashYurt">
             <figcaption>We like Yurts =P</figcaption>
+            <img src="container.jpg" alt="Shipping Container">
+            <figcaption>Our container.</figcaption>
+            <img src="dome-inside.jpg" alt="Inside the Dome">
+            <figcaption>Inside the dome.</figcaption>
         </section>
 
         <section id="join-the-madness">
