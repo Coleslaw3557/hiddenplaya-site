@@ -3,531 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌀 Legends of the Hidden Playa - A Burning Man EPIC! 🌀</title>
+    <title>Legends of the Hidden Playa — Black Rock City 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS:wght@400;700&display=swap');
-
+        :root {
+            --stone-dark: #14100b;
+            --stone: #241c12;
+            --parchment: #ecdcb0;
+            --parchment-edge: #cbb27e;
+            --gold: #d4af37;
+            --gold-bright: #f3d770;
+            --torch: #ff8a2b;
+            --jungle: #5a7d4f;
+            --blood: #8e2b22;
+            --ink: #3a2a17;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: "Comic Sans MS", cursive, sans-serif;
-            background-color: #FF00FF;
-            background-image: linear-gradient(45deg, #FF00FF, #00FFFF);
-            color: #FFFFFF;
-            text-shadow: 2px 2px #000000;
+            font-family: "IM Fell English", "Times New Roman", serif;
+            font-size: 18px;
+            color: #f2e7cf;
+            background-color: var(--stone-dark);
+            background-image:
+                radial-gradient(circle at 50% -10%, rgba(255,138,43,0.18), transparent 45%),
+                radial-gradient(circle at 12% 8%, rgba(255,138,43,0.12), transparent 22%),
+                radial-gradient(circle at 88% 8%, rgba(255,138,43,0.12), transparent 22%),
+                repeating-linear-gradient(0deg, rgba(0,0,0,0.25) 0 2px, transparent 2px 5px),
+                linear-gradient(160deg, #1b150e, #0c0a07 70%);
             text-align: center;
+            margin: 0;
+            padding: 0 0 60px;
+            animation: torch-ambient 6s ease-in-out infinite;
         }
-        header, main, footer {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            animation: subtle-glitch 5s infinite;
+        @keyframes torch-ambient {
+            0%, 100% { background-color: #14100b; }
+            45% { background-color: #181109; }
+            70% { background-color: #110d08; }
         }
-        h1, h2 {
-            color: #FFFF00;
-            text-align: center;
-            animation: rainbow 5s infinite;
+
+        header, main, footer { max-width: 860px; margin: 0 auto; padding: 24px 18px; }
+
+        /* Carved-stone tablet header */
+        header {
+            margin-top: 30px;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(255,138,43,0.25), transparent 60%),
+                linear-gradient(180deg, #2c2316, #1a140d);
+            border: 3px solid var(--gold);
+            border-radius: 6px;
+            box-shadow: 0 0 40px rgba(255,138,43,0.25), inset 0 0 60px rgba(0,0,0,0.7);
+            position: relative;
+        }
+        header::before, header::after {
+            content: "🔥";
+            position: absolute;
+            top: 14px;
+            font-size: 30px;
+            animation: flicker 1.6s infinite alternate;
+        }
+        header::before { left: 18px; }
+        header::after { right: 18px; }
+        @keyframes flicker {
+            0% { opacity: 1; transform: scale(1) rotate(-2deg); text-shadow: 0 0 18px var(--torch); }
+            100% { opacity: 0.75; transform: scale(1.12) rotate(2deg); text-shadow: 0 0 28px var(--gold-bright); }
+        }
+
+        h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-weight: 900;
+            color: var(--gold-bright);
+            letter-spacing: 2px;
+            font-size: clamp(28px, 6vw, 52px);
+            margin: 8px 24px 4px;
+            text-shadow: 0 2px 0 #000, 0 0 24px rgba(255,138,43,0.6);
+            animation: glow-pulse 4s ease-in-out infinite;
+        }
+        @keyframes glow-pulse {
+            0%, 100% { text-shadow: 0 2px 0 #000, 0 0 22px rgba(255,138,43,0.5); }
+            50% { text-shadow: 0 2px 0 #000, 0 0 40px rgba(243,215,112,0.9); }
+        }
+        h2 {
+            font-family: "Cinzel", serif;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            font-size: clamp(22px, 4vw, 32px);
+            text-shadow: 0 1px 0 #000;
         }
         h3 {
-            color: #FFFF00;
-            text-align: center;
-            animation: rainbow 2s infinite;
+            font-family: "Cinzel", serif;
+            color: var(--gold-bright);
+            letter-spacing: 1px;
         }
-        img {
+        .subtitle {
+            font-family: "Cinzel", serif;
+            font-style: italic;
+            color: #e8d199;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* Parchment scroll sections */
+        main section {
+            background:
+                radial-gradient(circle at 50% 0%, #f4e6c0, var(--parchment) 60%, var(--parchment-edge));
+            color: var(--ink);
+            border: 2px solid #7a5a2c;
+            border-radius: 4px;
+            margin: 26px 0;
+            padding: 26px 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 50px rgba(120,90,40,0.25);
+            position: relative;
+            text-align: left;
+        }
+        main section h2, main section h3 { text-align: center; color: #6b3f12; text-shadow: none; }
+        main section p { line-height: 1.55; }
+
+        /* Relic-framed images */
+        img.relic, main section img {
+            display: block;
             max-width: 100%;
             height: auto;
-            border: 5px solid #FFFFFF;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            transition: transform 0.5s;
-        }
-        img:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li:before {
-            content: "🦄 ";
-            color: #00FF00;
-        }
-        .helpercat-text {
-    position: fixed;
-    bottom: 70px; /* Adjust this value to position the text box correctly */
-    right: 10px; /* Adjust this value to position the text box correctly */
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #FFFFFF;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-        @keyframes subtle-glitch {
-            0% { transform: translate(0, 0); }
-            97% { transform: translate(0, 0); }
-            98% { transform: translate(-2px, 2px); }
-            99% { transform: translate(2px, -2px); }
-            100% { transform: translate(0, 0); }
-        }
-        @keyframes rainbow {
-            0% { color: #FF0000; }
-            20% { color: #FF7F00; }
-            40% { color: #FFFF00; }
-            60% { color: #00FF00; }
-            80% { color: #0000FF; }
-            100% { color: #FF0000; }
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #FF00FF;
-            color: #FFFFFF;
-            font-size: 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            animation: pulse 1s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        .do-not-click {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #FF0000;
-            color: #FFFFFF;
-            font-size: 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #spinning-photo {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            animation: spin-around 10s linear infinite;
-        }
-        @keyframes spin-around {
-            0% {
-                transform: rotate(0deg) translate(150px) rotate(0deg);
-                top: 10%;
-                left: 10%;
-            }
-            25% {
-                transform: rotate(90deg) translate(150px) rotate(-90deg);
-                top: 10%;
-                left: 80%;
-            }
-            50% {
-                transform: rotate(180deg) translate(150px) rotate(-180deg);
-                top: 80%;
-                left: 80%;
-            }
-            75% {
-                transform: rotate(270deg) translate(150px) rotate(-270deg);
-                top: 80%;
-                left: 10%;
-            }
-            100% {
-                transform: rotate(360deg) translate(150px) rotate(-360deg);
-                top: 10%;
-                left: 10%;
-            }
-        }
-        .glitch {
-            position: relative;
-            display: inline-block;
-        }
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #00FFFF;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim-1 2s infinite linear alternate-reverse;
-        }
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #FF00FF;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim-2 3s infinite linear alternate-reverse;
-        }
-        @keyframes glitch-anim-1 {
-            0% { clip: rect(49px, 9999px, 47px, 0); transform: skew(0.8deg); }
-            20% { clip: rect(63px, 9999px, 81px, 0); transform: skew(0.2deg); }
-            40% { clip: rect(23px, 9999px, 55px, 0); transform: skew(0.3deg); }
-            60% { clip: rect(51px, 9999px, 6px, 0); transform: skew(0.7deg); }
-            80% { clip: rect(32px, 9999px, 41px, 0); transform: skew(0.5deg); }
-            100% { clip: rect(52px, 9999px, 71px, 0); transform: skew(0.1deg); }
-        }
-        @keyframes glitch-anim-2 {
-            0% { clip: rect(61px, 9999px, 100px, 0); transform: skew(0.2deg); }
-            20% { clip: rect(6px, 9999px, 23px, 0); transform: skew(0.6deg); }
-            40% { clip: rect(89px, 9999px, 43px, 0); transform: skew(0.4deg); }
-            60% { clip: rect(42px, 9999px, 83px, 0); transform: skew(0.8deg); }
-            80% { clip: rect(2px, 9999px, 76px, 0); transform: skew(0.3deg); }
-            100% { clip: rect(36px, 9999px, 58px, 0); transform: skew(0.7deg); }
-        }
-        .trippy-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.7;
-            background: linear-gradient(45deg, #FF00FF, #00FFFF, #FFFF00, #00FF00);
-            background-size: 400% 400%;
-            animation: trippy-gradient 10s ease infinite;
-        }
-        @keyframes trippy-gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        #fireworks-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-        .hidden-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #0000FF;
-            color: #FFFFFF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none;
-        }
-        .hidden-message {
-            display: none;
-            color: #FF00FF;
-            font-size: 24px;
-            text-shadow: 2px 2px #000000;
-        }
-        .links-section {
-            background-color: #000000;
-            color: #00FF00;
-            padding: 20px;
-            margin: 20px 0;
-            border: 5px solid #FF00FF;
-            text-align: left;
-            font-family: "Comic Sans MS", cursive, sans-serif;
-        }
-        .links-section h2 {
-            color: #FFFF00;
-            text-align: center;
-            animation: rainbow 5s infinite;
-        }
-        .links-section h3 {
-            color: #FFFF00;
-            text-align: center;
-            animation: rainbow 2s infinite;
-        }
-        .links-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .links-section li {
-            margin: 10px 0;
-        }
-        .links-section a {
-            color: #00FFFF;
-            text-decoration: none;
-            font-size: 20px;
-        }
-        .links-section a:hover {
-            text-decoration: underline;
-        }
-        .bsd-badge {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            width: 50px;
-            height: 50px;
+            margin: 16px auto 4px;
+            border: 6px solid #3a2a17;
+            border-radius: 3px;
+            box-shadow: 0 0 0 3px var(--gold), 0 12px 24px rgba(0,0,0,0.55);
         }
         figcaption {
-    font-size: 0.8em; /* Makes the text smaller */
-    color: #CCCCCC; /* Light gray color for the caption */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
-    margin-top: 5px; /* Adds some space above the caption */
-    font-style: italic; /* Optional: makes the text italic */
-}
+            font-style: italic;
+            font-size: 0.85em;
+            color: #7a5e36;
+            text-align: center;
+            margin: 4px 0 14px;
+        }
+
+        ul { list-style: none; padding-left: 6px; }
+        main section li {
+            margin: 10px 0;
+            padding-left: 4px;
+            line-height: 1.45;
+        }
+        main section li::before { content: "🗝️ "; }
+
+        /* Calls to action — carved gold buttons */
+        .cta-button {
+            display: inline-block;
+            font-family: "Cinzel", serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 14px 28px;
+            margin: 12px 0;
+            color: #1a140d;
+            background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+            border: 2px solid #8a6a1f;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 0 #6e520f, 0 0 24px rgba(255,138,43,0.4);
+            animation: torch-bob 2.4s ease-in-out infinite;
+        }
+        .cta-button:hover { filter: brightness(1.12); transform: translateY(-2px); }
+        @keyframes torch-bob {
+            0%, 100% { box-shadow: 0 4px 0 #6e520f, 0 0 18px rgba(255,138,43,0.35); }
+            50% { box-shadow: 0 4px 0 #6e520f, 0 0 34px rgba(255,138,43,0.75); }
+        }
+
+        .where p.address {
+            text-align: center;
+            font-family: "Cinzel", serif;
+            font-weight: 700;
+            font-size: clamp(20px, 3.5vw, 28px);
+            color: var(--blood);
+            letter-spacing: 1px;
+        }
+
+        /* Floating ember canvas */
+        #embers-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none;
+        }
+
+        /* Stone guardian narrator */
+        .guardian {
+            position: fixed; bottom: 14px; right: 14px;
+            font-size: 52px; z-index: 50; cursor: pointer;
+            filter: drop-shadow(0 0 10px rgba(255,138,43,0.6));
+            animation: flicker 2.2s infinite alternate;
+        }
+        .guardian-text {
+            position: fixed; bottom: 78px; right: 14px; max-width: 230px;
+            background: linear-gradient(180deg, #2a2114, #16110b);
+            color: var(--gold-bright);
+            border: 1px solid var(--gold);
+            padding: 8px 12px; border-radius: 6px;
+            font-family: "Cinzel", serif; font-size: 13px; z-index: 50;
+            box-shadow: 0 0 16px rgba(0,0,0,0.6);
+        }
 
     </style>
 </head>
 <body>
-    <div class="trippy-bg"></div>
-    <canvas id="fireworks-canvas"></canvas>
+    <canvas id="embers-canvas"></canvas>
 
     <header>
-        <h1 class="glitch" data-text="🌴 Welcome to Legends of the Hidden Playa! 🌴">🌴 Welcome to Legends of the Hidden Playa! 🌴</h1>
-        <p>Prepare for an EPIC Burning Man Adventure!</p>
-        <a href="#join-the-madness" class="cta-button">Looking for the Camp form?</a>
+        <h1>Legends of the Hidden Playa</h1>
+        <p class="subtitle">Black Rock City · 2026</p>
+        <p>A group of friends, and friends of friends, hanging in the desert and chassing folks through our "temple".</p>
+        <a href="#join-the-madness" class="cta-button">The camp planning form</a>
     </header>
 
     <main>
         <section>
-            <h2>🐒 Who We Are 🦜</h2>
-            <p>We are group of friends and friend's friends, typically between 20-30 people. We bring a mind-bending (if not concussion producing), reality-warping, ghetto-tastic escape room / maze to the playa.</p>
+            <h2>Who We Are</h2>
+            <p>Twenty to thirty people, mostly friends and friends of friends. Every year we haul a maze out to the desert, bolt it down, and run it for the week.</p>
             <img src="crew.jpg" alt="Legends of the Hidden Playa Crew">
-            <figcaption>Trash bag shirts are in for 2023!</figcaption>
+            <figcaption>The crew, trash-bag tunics and all.</figcaption>
+        </section>
+
+        <section class="where">
+            <h2>Where to Find Us</h2>
+            <p class="address">4:30 &amp; B Street Plaza</p>
+            <p style="text-align:center; font-style:italic; color:#6b3f12;">Our new address!</p>
+            <img src="map.png" alt="Map of Black Rock City marking 4:30 and B Street Plaza">
+            <figcaption>Camp location.</figcaption>
         </section>
 
         <section>
-            <h2> Where Are We? </h2>
-            <p> <b>4:30 G plaza @ 12:45</b> </p>
-            <img src="map.png" alt="Address">
-            <figcaption>We're on a Plaza this year! w00t!</figcaption>
-        </section>
-        <section>
-            <h2>🎉 Our MIND-BLOWING Maze Experience 🎭</h2>
-            <p>Get ready for an INSANE(ly ghetto) interactive journey as we (and sometimes strangers) hastle and embarrass you through the intricate mess of scaffolding, wires, and ropes while quizzing you on Burning Man trivia, satire, and other ridiculous nonsense as you race through the maze to get the best time on our leader board.</p>
+            <h2>The Maze</h2>
+            <p>Test your might! Race through the maze dodging cops, rope, and other obstacles, or just explore the rooms!</p>
             <img src="pub.jpg" alt="Maze Entrance">
-            <figcaption>Hey kids, want some candy?</figcaption>
-            <h2>🍃 Art thou ready? 🎁</h2>
+            <figcaption>The entrance.</figcaption>
+            <h3>The challenges</h3>
             <ul>
-                <li>🚗 Test of the Gate Inspection: Get your car searched, grab your ankles, hide the firworks!</li>
-                <li>🚨 The Cop Dodge: Dodge trouble in Wadsworth or Nixon!</li>
-                <li>🚽 Find the Unoccupied Porto Potty: A true playa challenge!</li>
-                <li>💊 Deep Playa Drug Deal: Navigate the world of playa pharmaceuticals!</li>
-                <li>🤗 Navigate the Cuddle Puddle: Escape the tangled mess of love!</li>
-                <li>🐵 Assemble the Monkey Man Puzzle: Put together this trippy primate IN RECORD TIME!</li>
-                <li>🚚 No Friends Monday Packing: I swear it all fit on the way out here...</li>
+                <li><strong>Gate Inspection</strong> — Hold onto your butts, and hide your boofing supplies.</li>
+                <li><strong>The Cop Dodge</strong> — Waddsworth the Nixon bois are lookin' thirsty this year!</li>
+                <li><strong>Find an Open Porto</strong> — nobody wins this one</li>
+                <li><strong>The Deep Playa Exchange</strong> — Is this fool really offering me candy in public?</li>
+                <li><strong>Crossing the Cuddle Puddle</strong> — Don't trip on burners =P</li>
+                <li><strong>The Monkey Man Puzzle</strong> — put it back together, fast</li>
+                <li><strong>Strike</strong> — I swear it all fit in the truck when we got here!</li>
             </ul>
         </section>
 
         <section>
-            <h2>🏕️ Camp Life 🌴</h2>
-            <p>Most of us are in our 30s-40s with the majority from California, Austin, Portland, and Salt Lake.</p>
-            <p>We aim to stay under 35 people with a mix of veterans and new comers. This encourages everyone to know everyone in camp. </p>
-            <h3>To help make playa life more enjoyable camp provides:</h3>
+            <h2>Camp</h2>
+	    <p>We're mostly a bunch of 30s/40s, from California, Austin, Portland, and Salt Lake. We cap the camp at approx 35 people so everyone still knows each other. </p>
+            <h3>Camp owned infrastructure:</h3>
             <ul>
-                <li>🛋️ A large common area with couches, kitchen/stove, cooler storage, and lounge area.</li>
-                <li>🚿 A shower that doesn't feel like you're naked in the jungle!</li>
-                <li>🌿 Covered and well lit shade structure for tent cameras</li>
-                <li>💧 500 gallons of fresh water (roof top pool in the works)</li>
-                <li> Limited 110v power to charge phones, electronics, etc (be reasonable on wattage).</li>
-            </ul> 
-            <h3> What we don't do</h3>
+                <li>Couches, a stove, cooler storage, and somewhere to sit</li>
+                <li>A private shower</li>
+                <li>A covered, lit, shade structure for tent campers</li>
+                <li>500 gallons of water (no, there's no pool)</li>
+                <li>Some 110v power — enough to charge a phone, not a hair dryer, or aircon.</li>
+            </ul>
+            <h3>What to bring yourself:</h3>
             <ul>
-                <li> Camp Meals - Sharing is great but camp does not provide food </li>
-                <li> Housing - Camp can help with shade but best you bring your own living structure</li>  
-                <li> RV Strip - We're not really speced for hosting RVs or large trailers. </li>
-
+                <li>Your own food</li>
+                <li>Your own sleep setup — optionally shade, you bring the rest</li>
+                <li>RVs: we're not speced to have RVs in camp so we're probably not a good fit if you need that</li>
+            </ul>
         </section>
 
         <section>
-            <h2>🌈 Photos 📸</h2>
+            <h2>Photos</h2>
             <img src="chill.jpg" alt="Camp Common Area">
-            <figcaption>Part of the camp common area.</figcaption>
+            <figcaption>The common area.</figcaption>
             <img src="room-service.jpg" alt="Camp at Night">
-            <figcaption>Full service kind of place!</figcaption>
+            <figcaption>Camp at night.</figcaption>
             <img src="build.jpg" alt="Build">
-            <figcaption>Build Week</figcaption>
+            <figcaption>Build week.</figcaption>
             <img src="brs.jpg" alt="Tent Shade">
-            <figcaption>Shade for Tent Campers</figcaption>
+            <figcaption>Shade going up for tent campers.</figcaption>
             <img src="build-group.jpg" alt="Build Group">
-            <figcaption>Pre Playa Prep</figcaption>
+            <figcaption>Older prep day.</figcaption>
             <img src="yurt.jpg" alt="CrashYurt">
-            <figcaption>Camp Kirkland featuring YurtsRUs</figcaption>
+            <figcaption>We like Yurts =P</figcaption>
         </section>
 
         <section id="join-the-madness">
-            <h2>🎪 Join the Madness! 🎉</h2>
-            <p>Think you'd fit in with us? We'd love to hear from you! Fill out this form and we'll get in touch!</p>
-            <a href="https://forms.gle/ecuFiY2Ttb6Hb9KH7" class="cta-button">Camp Form</a>
+            <h2>Fill out google sheet</h2>
+            <p>Whether you're a regular or just interested, fill out the form, it helps for planning. We'll keep emails to a minimum. Interested in camping and running the maze with us? Hit us up, we'd love to chat or get a beer together and see if we might be a good fit out there.</p>
+            <a href="https://forms.gle/ecuFiY2Ttb6Hb9KH7" class="cta-button">The Camp Form</a>
         </section>
 
-        <section>
-            <h2>🚨 NO! Your art sucks! 🚨</h2>
-            <button class="do-not-click" onclick="document.getElementById('spinning-photo').style.display = 'block';"> Be sure to check your sleeping bag. </button>
-        </section>
-
-        <section class="links-section">
-            <h2>🌐 Web Ring 🌐</h2>
-            <ul>
-                <li><a href="https://www.catsinsinks.com/" target="_blank">Cats in Sinks</a></li>
-                <li><a href="https://www.landoverbaptist.org/" target="_blank">Landover Baptist Church</a></li>
-                <li><a href="https://www.deathcult.fun/" target="_blank">Death Cult</a></li>
-            </ul>
-        </section>
-
-        <div class="hidden-button" id="hidden-button">Awkwardly Placed Button</div>
-        <div class="hidden-message" id="hidden-message">You should have never let Tim make the website...</div>
     </main>
 
-    <footer>
-        <p>🎊 Copyleft 1998 Legends of the Hidden Playa. This page is graciously hosted by <b>Playa Pharmaceuticals Inc.</b> 🎊</p>
-        <p>🤖 This site was generated by a Microshaft AI. Beep boop, I'm totally a real AI, trust me. 😉🤖</p>
-    </footer>
-
-    <img id="spinning-photo" src="stone_face.jpg" alt="Spinning Stone Face" style="display: block;">
-    <img src="resized_cat.png" alt="Helpercat" class="bsd-badge">
-    <div class="helpercat-text">Are you staying hydrated?</div>
-
-
-    <audio id="jump-scare-sound" src="your-sound-file.mp3" preload="auto"></audio>
-    <img id="jump-scare-image" src="scorp.jpg" alt="Jump Scare" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000;">
+    <div class="guardian" id="guardian">🗿</div>
+    <div class="guardian-text" id="guardian-text">We're ON for 2026!</div>
 
     <script>
-        function launchFireworks() {
-            const canvas = document.getElementById('fireworks-canvas');
+        // --- Rising temple embers ------------------------------------------
+        (function () {
+            const canvas = document.getElementById('embers-canvas');
             const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            resize();
+            window.addEventListener('resize', resize);
 
-            class Firework {
-                constructor(x, y, radius, color, velocity) {
-                    this.x = x;
-                    this.y = y;
-                    this.radius = radius;
-                    this.color = color;
-                    this.velocity = velocity;
-                    this.alpha = 1;
-                }
+            const colors = ['#ff8a2b', '#ffb347', '#d4af37', '#f3d770', '#b23a2e'];
+            const embers = [];
 
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = this.alpha;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                    ctx.restore();
-                }
-
-                update() {
-                    this.draw();
-                    this.velocity.y -= 0.01;
-                    this.x += this.velocity.x;
-                    this.y += this.velocity.y;
-                    this.alpha -= 0.01;
-                }
+            function spawn() {
+                embers.push({
+                    x: Math.random() * canvas.width,
+                    y: canvas.height + 10,
+                    r: Math.random() * 2.4 + 0.8,
+                    vy: -(Math.random() * 1.3 + 0.5),
+                    vx: (Math.random() - 0.5) * 0.6,
+                    drift: Math.random() * Math.PI * 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    alpha: Math.random() * 0.5 + 0.4
+                });
             }
-
-            class Particle {
-                constructor(x, y, radius, color, velocity) {
-                    this.x = x;
-                    this.y = y;
-                    this.radius = radius;
-                    this.color = color;
-                    this.velocity = velocity;
-                    this.alpha = 1;
-                }
-
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = this.alpha;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                    ctx.restore();
-                }
-
-                update() {
-                    this.draw();
-                    this.velocity.x *= 0.99;
-                    this.velocity.y *= 0.99;
-                    this.x += this.velocity.x;
-                    this.y += this.velocity.y;
-                    this.alpha -= 0.01;
-                }
-            }
-
-            const fireworks = [];
-            const particles = [];
-            const colors = ['#FF00FF', '#00FFFF', '#FFFF00', '#00FF00'];
 
             function animate() {
                 requestAnimationFrame(animate);
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                fireworks.forEach((firework, index) => {
-                    firework.update();
-                    if (firework.velocity.y >= 0) {
-                        for (let i = 0; i < 100; i++) { // Increase the number of particles
-                            particles.push(new Particle(firework.x, firework.y, Math.random() * 2, firework.color, {
-                                x: (Math.random() - 0.5) * 5,
-                                y: (Math.random() - 0.5) * 5
-                            }));
-                        }
-                        fireworks.splice(index, 1);
-                    }
-                });
-
-                particles.forEach((particle, index) => {
-                    if (particle.alpha <= 0) {
-                        particles.splice(index, 1);
-                    } else {
-                        particle.update();
-                    }
-                });
+                for (let i = embers.length - 1; i >= 0; i--) {
+                    const e = embers[i];
+                    e.drift += 0.03;
+                    e.x += e.vx + Math.sin(e.drift) * 0.4;
+                    e.y += e.vy;
+                    e.alpha -= 0.0035;
+                    if (e.alpha <= 0 || e.y < -10) { embers.splice(i, 1); continue; }
+                    ctx.save();
+                    ctx.globalAlpha = e.alpha;
+                    ctx.shadowBlur = 12;
+                    ctx.shadowColor = e.color;
+                    ctx.beginPath();
+                    ctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+                    ctx.fillStyle = e.color;
+                    ctx.fill();
+                    ctx.restore();
+                }
             }
-
-            function createFirework() {
-                const x = Math.random() * canvas.width;
-                const y = canvas.height;
-                const radius = Math.random() * 3 + 1;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const velocity = {
-                    x: (Math.random() - 0.5) * 5,
-                    y: Math.random() * -15 - 5
-                };
-                fireworks.push(new Firework(x, y, radius, color, velocity));
-            }
-
             animate();
-            setInterval(createFirework, 200); // Increase the frequency of fireworks
-        }
-
-        launchFireworks();
-
-        function doJumpScare() {
-            const jumpScareImage = document.getElementById('jump-scare-image');
-            const jumpScareSound = document.getElementById('jump-scare-sound');
-            jumpScareImage.style.display = 'block';
-            jumpScareSound.play();
-
-            setTimeout(() => {
-                jumpScareImage.style.display = 'none';
-            }, 1000); // Hide the image after 3 seconds
-        }
-
-        document.querySelector('.do-not-click').addEventListener('click', doJumpScare);
-
-        // Secret button functionality
-        function revealSecretButton() {
-            const hiddenButton = document.getElementById('hidden-button');
-            hiddenButton.style.display = 'block';
-        }
-
-        function revealSecretMessage() {
-            const hiddenMessage = document.getElementById('hidden-message');
-            hiddenMessage.style.display = 'block';
-        }
-
-        // Add event listeners for secret interactions
-        document.getElementById('spinning-photo').addEventListener('click', revealSecretButton);
-        document.getElementById('hidden-button').addEventListener('click', revealSecretMessage);
+            setInterval(spawn, 90);
+        })();
     </script>
 </body>
 </html>
